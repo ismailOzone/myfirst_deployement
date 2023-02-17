@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfirst
+spec:
+  selector:
+    matchLabels:
+      app: myfirst
+  template:
+    metadata:
+      labels:
+        app: myfirst
+    spec:
+      containers:
+      - name: myfirst
+        image: ismail
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 4200
+
+
+
+
+
